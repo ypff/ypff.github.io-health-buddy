@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HealthBuddy - Your AI-powered health companion providing personalized medical insights and weekly health summaries">
-    <meta name="keywords" content="health AI, medical insights, health technology, medical research, health updates">
     <title>HealthBuddy - AI-Powered Health Insights</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.363.0/font/lucide.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Define custom brand colors using CSS variables */
         :root {
@@ -16,65 +16,6 @@
             --brand-grey: #A2AAAD; /* Pantone 429 C */
             --card-bg: #f3f4f6; /* Tailwind gray-100 for light grey cards */
         }
-        /* Animation keyframes */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Enhanced interactive elements */
-        .btn-primary {
-            background-color: var(--brand-red);
-            color: white;
-            font-weight: 600;
-            padding: 0.5rem 1.5rem;
-            border-radius: 0.25rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(200, 16, 46, 0.2);
-        }
-        
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        /* Animate sections on scroll */
-        .animate-on-scroll {
-            opacity: 0;
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        /* Enhanced mobile menu transition */
-        #nav-menu {
-            transition: all 0.3s ease;
-        }
-        
-        @media (max-width: 768px) {
-            #nav-menu {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            
-            #nav-menu.show {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
         /* Utility classes to apply custom colors */
         .bg-brand-red { background-color: var(--brand-red); }
         .text-brand-red { color: var(--brand-red); }
@@ -82,9 +23,9 @@
         .bg-card-bg { background-color: var(--card-bg); }
         .border-brand-red { border-color: var(--brand-red); }
 
-        /* Basic font setting to resemble mockup (sans-serif) */
+        /* Use Inter font */
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         /* Ensure icons align nicely with text if needed */
         .icon-text-baseline {
@@ -95,97 +36,106 @@
             display: inline-flex;
             align-items: center;
         }
+        /* Add default rounded corners */
+        button, input, textarea, select, .card, .feature-card, .step-card, .process-card, .placeholder-img {
+             border-radius: 0.5rem; /* Equivalent to rounded-lg */
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <header class="bg-brand-red text-white relative">
+    <header class="bg-brand-red text-white shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
                 <img src="866f8478-3e1a-409a-a3d7-4dda72b1d9dd.png" alt="HealthBuddy Logo" class="h-10 mr-3">
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-white">
+            <ul class="hidden md:flex space-x-6 text-sm">
+                <li><a href="#" class="hover:text-gray-300 transition duration-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition duration-300">Features</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition duration-300">Sample Report</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition duration-300">Subscribe</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition duration-300">Contact</a></li>
+            </ul>
+            <button class="md:hidden text-white focus:outline-none">
                 <i class="lucide lucide-menu text-2xl"></i>
             </button>
-            <div class="hidden md:block">
-                <button class="btn-primary">Subscribe Now</button>
-            </div>
         </nav>
     </header>
 
     <main>
         <section class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                     Take Control of <br> Your Health with <br> <span class="text-brand-red">AI-Powered Insights</span>
                 </h1>
                 <p class="text-lg mb-6 text-brand-grey">Designed for YOU by Fairfield Dolan AI & Tech Institute</p>
-                <button class="btn-primary">
+                <button class="bg-brand-red text-white font-semibold py-3 px-8 rounded-lg hover:bg-red-700 transition duration-300 shadow-md hover:shadow-lg">
                     Subscribe Now - 100% Free!
                 </button>
             </div>
             <div class="md:w-1/2">
-                <div class="bg-gray-300 w-full h-64 md:h-80 rounded-lg flex items-center justify-center text-gray-500">
+                <div class="bg-gray-200 w-full h-64 md:h-80 rounded-lg flex items-center justify-center text-gray-500 placeholder-img shadow">
                     <i class="lucide lucide-image text-6xl"></i>
-                    <span class="ml-4">Hero Image Placeholder</span>
+                    <span class="ml-4 text-lg">Hero Image Placeholder</span>
                 </div>
             </div>
         </section>
 
-        <section class="py-16">
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                <div class="grid md:grid-cols-3 gap-8 pt-12"> <div class="bg-card-bg p-8 rounded-lg shadow-md feature-card hover:shadow-lg transition-shadow duration-300">
+                        <div class="text-brand-red mb-4 inline-block"><i class="lucide lucide-lock text-4xl"></i></div>
+                        <h3 class="text-xl font-semibold mb-2">Free Access</h3>
+                        <p class="text-brand-grey">Enjoy 100% free access to AI features.</p>
+                    </div>
+                    <div class="bg-card-bg p-8 rounded-lg shadow-md feature-card hover:shadow-lg transition-shadow duration-300">
+                        <div class="text-brand-red mb-4 inline-block"><i class="lucide lucide-brain-circuit text-4xl"></i></div>
+                        <h3 class="text-xl font-semibold mb-2">24/7 AI Research</h3>
+                        <p class="text-brand-grey">Continuous AI-driven health research at your fingertips.</p>
+                    </div>
+                    <div class="bg-card-bg p-8 rounded-lg shadow-md feature-card hover:shadow-lg transition-shadow duration-300">
+                        <div class="text-brand-red mb-4 inline-block"><i class="lucide lucide-newspaper text-4xl"></i></div>
+                        <h3 class="text-xl font-semibold mb-2">Weekly Reports</h3>
+                        <p class="text-brand-grey">Receive concise health summaries every week.</p>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section class="bg-gray-50 py-16">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold mb-12 text-center">Who Should Subscribe?</h2>
                 <div class="grid md:grid-cols-3 gap-8 items-start">
-                    <div class="text-left">
-                        <ul class="space-y-2">
+                    <div class="text-left md:col-span-1">
+                         <h3 class="text-xl font-semibold mb-4 text-brand-red">Individuals Seeking:</h3>
+                        <ul class="space-y-3">
                             <li class="flex items-start">
-                                <span class="text-brand-red mr-2 mt-1">&#8226;</span> <span>Get a personalized action plan</span>
+                                <span class="text-brand-red mr-2 mt-1 text-xl font-bold">&bull;</span>
+                                <span>A personalized health action plan</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-brand-red mr-2 mt-1">&#8226;</span>
-                                <span>Support loved ones</span>
+                                <span class="text-brand-red mr-2 mt-1 text-xl font-bold">&bull;</span>
+                                <span>Ways to better support loved ones' health</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-brand-red mr-2 mt-1">&#8226;</span>
-                                <span>Want personalized insights!</span>
+                                <span class="text-brand-red mr-2 mt-1 text-xl font-bold">&bull;</span>
+                                <span>Actionable, personalized health insights</span>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-brand-red mr-2 mt-1 text-xl font-bold">&bull;</span>
+                                <span>Simplified understanding of complex research</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-card-bg p-6 rounded-lg shadow text-center card-hover">
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md text-center md:col-span-1 card hover:shadow-lg transition-shadow duration-300">
                         <div class="text-brand-grey mb-3 inline-block"><i class="lucide lucide-users text-4xl"></i></div>
                         <h3 class="text-xl font-semibold mb-2">Caregivers</h3>
-                        <p class="text-brand-grey text-sm">Proportion loved ones case or mind</p> </div>
-                    <div class="bg-card-bg p-6 rounded-lg shadow text-center card-hover">
+                        <p class="text-brand-grey text-sm">Support loved ones with informed care and stay updated on relevant conditions.</p>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md text-center md:col-span-1 card hover:shadow-lg transition-shadow duration-300">
                         <div class="text-brand-grey mb-3 inline-block"><i class="lucide lucide-stethoscope text-4xl"></i></div>
                         <h3 class="text-xl font-semibold mb-2">Medical Professionals</h3>
-                        <p class="text-brand-grey text-sm">Stay updated w/ advancements</p> </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-3 gap-8 items-start">
-                    <div class="bg-card-bg p-6 rounded-lg shadow text-center card-hover">
-                        <div class="text-brand-grey mb-3 inline-block">
-                            <i class="lucide lucide-brain text-4xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">AI-Powered Analysis</h3>
-                        <p class="text-brand-grey text-sm">Our AI analyzes thousands of medical journals daily</p>
-                    </div>
-                    <div class="bg-card-bg p-6 rounded-lg shadow text-center card-hover">
-                        <div class="text-brand-grey mb-3 inline-block">
-                            <i class="lucide lucide-target text-4xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Personalized Updates</h3>
-                        <p class="text-brand-grey text-sm">Get insights relevant to your interests</p>
-                    </div>
-                    <div class="bg-card-bg p-6 rounded-lg shadow text-center card-hover">
-                        <div class="text-brand-grey mb-3 inline-block">
-                            <i class="lucide lucide-shield-check text-4xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Trusted Sources</h3>
-                        <p class="text-brand-grey text-sm">Information from verified medical journals</p>
+                        <p class="text-brand-grey text-sm">Stay efficiently updated with the latest advancements and research relevant to your field.</p>
                     </div>
                 </div>
             </div>
@@ -196,24 +146,25 @@
                 <div>
                     <h2 class="text-3xl font-bold mb-10">How HealthBuddy Works</h2>
                     <div class="space-y-8">
-                        <div class="flex items-start animate-on-scroll">
-                            <div class="text-brand-red font-bold text-3xl mr-4">1</div>
+                        <div class="flex items-start step-card p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300">
+                            <div class="flex-shrink-0 bg-brand-red text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-xl mr-4">1</div>
                             <div>
                                 <h3 class="font-semibold text-lg mb-1">Free Subscription</h3>
-                                <p class="text-brand-grey">Sign up effortlessly.</p>
+                                <p class="text-brand-grey">Sign up effortlessly and securely in seconds. It's completely free.</p>
                             </div>
                         </div>
-                        <div class="flex items-start animate-on-scroll">
-                            <div class="text-brand-red font-bold text-3xl mr-4">2</div>
+                        <div class="flex items-start step-card p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300">
+                             <div class="flex-shrink-0 bg-brand-red text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-xl mr-4">2</div>
                             <div>
                                 <h3 class="font-semibold text-lg mb-1">AI Agentic Research</h3>
-                                <p class="text-brand-grey">Our AI delves into the latest journals and trials.</p> </div>
+                                <p class="text-brand-grey">Our specialized AI agents continuously delve into the latest medical journals, clinical trials, and research papers.</p>
+                            </div>
                         </div>
-                        <div class="flex items-start animate-on-scroll">
-                            <div class="text-brand-red font-bold text-3xl mr-4">3</div>
+                        <div class="flex items-start step-card p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300">
+                             <div class="flex-shrink-0 bg-brand-red text-white rounded-full h-10 w-10 flex items-center justify-center font-bold text-xl mr-4">3</div>
                             <div>
-                                <h3 class="font-semibold text-lg mb-1">Free Reports</h3>
-                                <p class="text-brand-grey">Receive simplified daily insights and a comprehensive weekly summary.</p>
+                                <h3 class="font-semibold text-lg mb-1">Personalized Reports</h3>
+                                <p class="text-brand-grey">Receive simplified daily insights and a comprehensive, easy-to-understand weekly summary tailored to your interests.</p>
                             </div>
                         </div>
                     </div>
@@ -221,36 +172,39 @@
 
                 <div>
                     <h2 class="text-3xl font-bold mb-10">Experience HealthBuddy</h2>
-                    <div class="bg-card-bg p-6 rounded-lg shadow text-center mb-6 card-hover">
-                        <div class="flex justify-around items-center text-brand-grey">
-                            <div class="text-center">
-                                <i class="lucide lucide-search text-3xl text-brand-red"></i>
-                                <p class="text-sm mt-1 font-semibold">Dig</p>
-                                <p class="text-xs mt-1">AI searches journals trials daily</p>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md text-center mb-8 process-card">
+                        <div class="flex flex-col sm:flex-row justify-around items-center text-brand-grey space-y-4 sm:space-y-0 sm:space-x-2">
+                            <div class="text-center flex-1">
+                                <i class="lucide lucide-search text-3xl text-brand-red mb-2"></i>
+                                <p class="text-sm font-semibold">Dig</p>
+                                <p class="text-xs mt-1">AI searches journals & trials daily</p>
                             </div>
-                            <i class="lucide lucide-chevron-right text-xl"></i>
-                            <div class="text-center">
-                                <i class="lucide lucide-filter text-3xl text-brand-red"></i>
-                                <p class="text-sm mt-1 font-semibold">Highlight</p>
+                            <i class="lucide lucide-chevron-right text-xl hidden sm:block"></i>
+                            <i class="lucide lucide-chevron-down text-xl sm:hidden mx-auto"></i>
+                            <div class="text-center flex-1">
+                                <i class="lucide lucide-filter text-3xl text-brand-red mb-2"></i>
+                                <p class="text-sm font-semibold">Highlight</p>
                                 <p class="text-xs mt-1">Filters key breakthroughs</p>
                             </div>
-                            <i class="lucide lucide-chevron-right text-xl"></i>
-                            <div class="text-center">
-                                <i class="lucide lucide-file-text text-3xl text-brand-red"></i>
-                                <p class="text-sm mt-1 font-semibold">Refine</p>
-                                <p class="text-xs mt-1">Simplified reports</p>
+                             <i class="lucide lucide-chevron-right text-xl hidden sm:block"></i>
+                             <i class="lucide lucide-chevron-down text-xl sm:hidden mx-auto"></i>
+                            <div class="text-center flex-1">
+                                <i class="lucide lucide-file-text text-3xl text-brand-red mb-2"></i>
+                                <p class="text-sm font-semibold">Refine</p>
+                                <p class="text-xs mt-1">Creates simplified reports</p>
                             </div>
-                            <i class="lucide lucide-chevron-right text-xl"></i>
-                            <div class="text-center">
-                                <i class="lucide lucide-gift text-3xl text-brand-red"></i>
-                                <p class="text-sm mt-1 font-semibold">Wrap Up</p>
-                                <p class="text-xs mt-1">Weekly summary for you.</p>
+                             <i class="lucide lucide-chevron-right text-xl hidden sm:block"></i>
+                             <i class="lucide lucide-chevron-down text-xl sm:hidden mx-auto"></i>
+                            <div class="text-center flex-1">
+                                <i class="lucide lucide-gift text-3xl text-brand-red mb-2"></i>
+                                <p class="text-sm font-semibold">Wrap Up</p>
+                                <p class="text-xs mt-1">Weekly summary delivered to you.</p>
                             </div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="btn-primary">
-                            View Sample
+                        <button class="bg-white text-brand-red border-2 border-brand-red font-semibold py-2 px-8 rounded-lg hover:bg-red-50 hover:text-red-700 transition duration-300 shadow hover:shadow-md">
+                            View Sample Report
                         </button>
                     </div>
                 </div>
@@ -260,68 +214,17 @@
 
     <footer class="bg-brand-red text-white py-10 mt-16">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <div>
+            <div class="mb-6 md:mb-0">
                 <h3 class="text-2xl font-bold mb-2">Subscribe Now!</h3>
-                <p class="text-gray-200">AI-powered medical updates - 100% free!</p>
+                <p class="text-gray-200">Get AI-powered medical updates delivered weekly - 100% free!</p>
             </div>
             <div class="mt-6 md:mt-0">
-                <p class="font-semibold">Contact Us:</p>
-                <a href="mailto:dolan.aitech@gmail.com" class="text-gray-200 hover:text-white">dolan.aitech@gmail.com</a>
+                <p class="font-semibold mb-1">Contact Us:</p>
+                <a href="mailto:dolan.aitech@gmail.com" class="text-gray-200 hover:text-white transition duration-300 underline">dolan.aitech@gmail.com</a>
+                <p class="text-xs text-gray-300 mt-2">&copy; 2025 Fairfield Dolan AI & Tech Institute. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
 </body>
-<script>
-    // Mobile menu functionality
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const navMenu = document.getElementById('nav-menu');
-
-    mobileMenuButton.addEventListener('click', () => {
-        navMenu.classList.toggle('hidden');
-        navMenu.classList.toggle('show');
-    });
-
-    // Add smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const section = document.querySelector(this.getAttribute('href'));
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu after clicking
-                navMenu.classList.add('hidden');
-                navMenu.classList.remove('show');
-            }
-        });
-    });
-
-    // Add hover animations for cards
-    document.querySelectorAll('.card-hover').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-5px)';
-            card.style.transition = 'transform 0.3s ease';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Animate sections on scroll
-    const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationPlayState = 'running';
-            }
-        });
-    });
-
-    animateOnScrollElements.forEach(element => {
-        observer.observe(element);
-    });
-</script>
 </html>
-
